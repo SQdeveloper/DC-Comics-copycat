@@ -1,0 +1,76 @@
+.header {
+    @include flex(space-around, center, row, nowrap);
+    width: 100%;
+    background-color: white;
+    height: 3.8em;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+
+    &__nav {
+        display: flex;
+        gap: 1.5em;        
+        font-size: .85em;
+        font-weight: bold;
+
+        &-enlace {
+            @include flex(center, end, row, nowrap);
+
+            &:hover {
+                color: var(--color-azul);
+            }
+            &:hover > img {
+                filter: invert(45%) sepia(79%) saturate(5653%) hue-rotate(195deg) brightness(93%) contrast(104%);
+            }
+        }
+    }
+    &__img {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+    &__logo {
+        width: 40px;
+        height: 40px;
+    }
+    &__enlaces {
+        text-transform: uppercase;
+        font-size: .85em;
+        font-weight: bold;
+
+        &:hover {
+            color: var(--color-azul);
+        }
+    }
+    &__contRight {
+        display: flex;
+        gap: 1.5em;
+    }
+    &__contInput {
+        @include flex(center, center, row, nowrap);
+        gap: 1em;
+        padding: 1em;
+        height: 2.5em;
+        background-color: #f2f2f2;
+        border-radius: 2em;
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        transition: clip-path .5s;
+        position: absolute;
+
+        &__label {
+            font-weight: 600;
+            font-size: .9em
+        }
+        &__input {
+            border: none;
+            background-color: #f2f2f2;
+            outline: none;
+        }
+        &-active {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        &-search {
+            cursor: pointer;   
+        }
+    }
+}

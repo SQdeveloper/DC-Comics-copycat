@@ -1,0 +1,38 @@
+.home {
+    background: linear-gradient(transparent 50%, rgba(0,0,0,.8) 100%), url("/assets/DC_Home_20221130_Wildstorm101.webp");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    margin-top: 3.8em;
+    height: calc(100vh - 3.8em);
+
+    &__text {
+        @include flex(center, start, column, wrap);
+        position: absolute;
+        bottom: 3em;
+        left: 7em;
+        color: white;
+        gap: 1em;
+        width: 35em;
+        font-weight: bolder;
+
+        &-enlace {
+            text-transform: uppercase;
+            font-size: .9em;
+            border: 2px solid black;
+            border-radius: 2em;
+            padding: .5em 2em;
+            background-color: #e2dddd;  
+            transition: all .4s;
+
+            &:hover {
+                background-color: var(--color-azul);
+                color: white;
+                border-color: var(--color-azul)
+            }
+        }
+        &-h2 {
+            font-size: 2em;
+        }
+    }
+}
