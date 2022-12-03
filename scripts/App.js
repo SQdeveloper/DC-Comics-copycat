@@ -6,45 +6,67 @@ const search     = document.querySelector(".header__contInput-search");
 const video      = document.querySelector(".contVideo__video");
 const imgTrailer = document.querySelector(".contVideo__img");
 const imgPlay    = document.querySelector(".contVideo__play");
-const arrowNext  = document.querySelector(".latest__next");
-const arrowPrev  = document.querySelector(".latest__prev");
-const wrapper    = document.querySelector(".latest__slider__wrapper");
+const arrowNext  = document.querySelectorAll(".latest__button-next");
+const arrowPrev  = document.querySelectorAll(".latest__button-prev");
+const wrapper    = document.querySelectorAll(".latest__slider__wrapper");
+const imgCard    = document.querySelectorAll(".latest__card-img",".latest__card-img-releases");
 let value        = false;
 let playVideo    = false;
 let activePlay   = true;
-let sliderCounter= 0;
+let sliderCounter= [0,0];
+let cardsVisible = [6,5];
 
-const wrapperMove = ()=>{
-    wrapper.style.transform = `translateX(calc(-${10*sliderCounter}%))`
-    console.log(10*sliderCounter)
+//función para aliniar los buttons flecha de los slider
+const calcularHeight = (img, i)=>{
+    arrowNext[i].style.top = `${(img.clientHeight/2) - 24}px`
+    arrowPrev[i].style.top = `${(img.clientHeight/2) - 24}px`
 }
 
-arrowNext.addEventListener("click", ()=>{
-    sliderCounter++;
-    if(sliderCounter == 5) {
-        arrowNext.style.opacity = 0;
-        arrowNext.style.zIndex = -1;
-    }
-    if(sliderCounter != 0) {
-        arrowPrev.style.opacity = 1;
-        arrowPrev.style.zIndex = 1;
-    }
-    wrapperMove();
-})
+//alinio el button flecha del slider(arrow)
+calcularHeight(imgCard[0], 0);
+calcularHeight(imgCard[18], 1);
 
-arrowPrev.addEventListener("click", ()=>{
-    sliderCounter--;
-    if(sliderCounter == 0) {
-        arrowPrev.style.opacity = 0;
-        arrowPrev.style.zIndex = -1;
-    }
-    if(sliderCounter != 5) {
-        arrowNext.style.opacity = 1;
-        arrowNext.style.zIndex = 1;
-    }
-    wrapperMove();
-})
+window.addEventListener("resize", ()=>{
+    calcularHeight(imgCard[0], 0);//0 poquer elegimos cualquier img del primer slider
+    calcularHeight(imgCard[18], 1);//18 porque elegimos cualquier img del segundo slider
+});
 
+//funcion para mover el wrapper que esta en el slider
+const wrapperMove = (i)=>{
+    wrapper[i].style.transform = `translateX(-${10*sliderCounter[i]}%)`
+    console.log(sliderCounter);
+}
+//Dandole funcionalidad a los buttons flecha del slider
+arrowNext.forEach((arrow, i )=>{
+    arrow.addEventListener("click", ()=>{
+        sliderCounter[i]++;
+        if(sliderCounter[i] == cardsVisible[i]) {
+            arrow.style.opacity = 0;
+            arrow.style.zIndex = -1;
+        }
+        if(sliderCounter[i] != 0) {
+            arrowPrev[i].style.opacity = 1;
+            arrowPrev[i].style.zIndex = 1;
+        }
+        wrapperMove(i);
+    });
+});
+
+//Dandole funcionalidad a los buttons flecha del slider
+arrowPrev.forEach((arrow, i)=>{
+    arrow.addEventListener("click", ()=>{
+        sliderCounter[i]--;
+        if(sliderCounter[i] == 0) {
+            arrow.style.opacity = 0;
+            arrow.style.zIndex = -1;
+        }
+        if(sliderCounter[i] != cardsVisible[i]) {
+            arrowNext[i].style.opacity = 1;
+            arrowNext[i].style.zIndex = 1;
+        }
+        wrapperMove(i);
+    });
+})
 
 function reproduction() {
     if(!playVideo) {

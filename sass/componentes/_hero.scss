@@ -111,45 +111,156 @@
 }
 
 .latest {
-    position: relative;
-    width: 85%;
+    width: 87%;
     margin: 3em auto;
-    overflow-x: hidden;
-
+    
+    &__title {
+        margin-bottom: 2em;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+        padding-left: .4em;
+    }
+    &__contSlider {
+        position: relative;
+    }
     &__slider {
+        overflow-x: hidden;
         width: 100%;
-
+        
         &__wrapper {
             @include flex(center, start, row, nowrap);
             gap: 1.5em;
             width: 250%;
             transition: transform .8s;
+
+            &-releases {
+                width: 200%;
+            }
         }
     }
     &__card {
-        // height: 20em;
         width: calc(10% - 1.5em);
         background-color: white;
+        text-align: center;
+        box-shadow: 0px 6px 10px 0 rgba(0,0,0,0.1);
+        min-height: 16em;
+        margin-bottom: 2em;
+        cursor: pointer;
+
+        &-releases {
+            box-shadow: none;
+        }
 
         &-img {
             width: 100%;
-            height: 50%;
+            height: 60%;
+            user-select: none;
+            -webkit-user-drag: none;
+
+            &-releases {
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        &-span, &-h2 {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        &-span {
+            font-size: .8em;
+            color:rgb(107, 105, 105);    
+        }
+        &-h2 {
+            font-size: .95em;
+            letter-spacing: -1px;
+            width: 80%;
+            margin: 0 auto;
+            line-height: 1.6em;
+
+            &-releases {
+                font-size: 1.3em;
+            }
         }
     }
-    &__prev, &__next {
+    &__button {
         position: absolute;
-        display: block;
-        width: 55px;
-        height: 55px;
-        background-color: blueviolet;
+        box-shadow: 3px 3px 5px rgba(0,0,0,.2);
+        background-color: white;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        border: none;
+        cursor: pointer;
+        transition: opacity .6s;
+
+        &-next {
+            right: -10px;
+        }
+        &-prev {
+            opacity: 0;
+            z-index: -1;
+            left: -10px;
+        }
+        &-img {
+            width: 30px;
+            height: 30px;
+            filter: invert(35%) sepia(30%) saturate(5083%) hue-rotate(194deg) brightness(90%) contrast(105%);
+        }
+    }
+}
+
+.sliderA {
+    width: 100%;
+    overflow-x: hidden;
+    position: absolute;
+
+    &__sliderMove {
+        @include flex(center, center, row, nowrap);
+        width: 500%;
+        height: 25em;
+        background-color: lightblue;
+        transition: transform 1s;
+
+        &-card {
+            background-color: lightcoral;
+            width: 20%;
+            height: inherit;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            &-1 { background-image: url("/assets/slidera/slidera1.webp")}
+            &-2 { background-image: url("/assets/slidera/slidera2.webp")}
+            &-3 { background-image: url("/assets/slidera/slidera3.webp")}
+            &-4 { background-image: url("/assets/slidera/slidera4.webp")}
+            &-5 { background-image: url("/assets/slidera/slidera5.webp")}
+        }
+    }
+    &__arrow {
+        @include flex(center, center, row, nowrap);
+        position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        border-radius: 50%;
+        border: none;
+        width: 40px;
+        height: 40px;
+
+        &-left {
+            left: 0;
+        }
+        &-right{
+            right: 0;
+        }
     }
-    &__next {
-        right: 0;
-    }
-    &__prev {
-        opacity: 0;
-        z-index: -1;
+    &__img {
+        width: 30px;
+        height: 30px;
+        
+        &-left {
+            margin-left: -5px;
+        }
+        &-right {
+            margin-right: -2px;
+        }
     }
 }
