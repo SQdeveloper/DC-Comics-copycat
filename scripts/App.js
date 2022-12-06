@@ -13,8 +13,8 @@ const imgCard    = document.querySelectorAll(".latest__card-img",".latest__card-
 let value        = false;
 let playVideo    = false;
 let activePlay   = true;
-let sliderCounter= [0,0];
-let cardsVisible = [6,5];
+let sliderCounter= [0,0,0];
+let cardsVisible = [6,5,6];
 
 //función para aliniar los buttons flecha de los slider
 const calcularHeight = (img, i)=>{
@@ -23,18 +23,26 @@ const calcularHeight = (img, i)=>{
 }
 
 //alinio el button flecha del slider(arrow)
-calcularHeight(imgCard[0], 0);
-calcularHeight(imgCard[18], 1);
+setTimeout(()=>{
+    calcularHeight(imgCard[0], 0);
+    calcularHeight(imgCard[18], 1);
+    calcularHeight(imgCard[20], 2);
+}, 100);
 
 window.addEventListener("resize", ()=>{
     calcularHeight(imgCard[0], 0);//0 poquer elegimos cualquier img del primer slider
     calcularHeight(imgCard[18], 1);//18 porque elegimos cualquier img del segundo slider
+    calcularHeight(imgCard[20], 2);//20 porque elegimos cualquier img del segundo slider
+    console.log("calcular")
 });
 
 //funcion para mover el wrapper que esta en el slider
 const wrapperMove = (i)=>{
-    wrapper[i].style.transform = `translateX(-${10*sliderCounter[i]}%)`
-    console.log(sliderCounter);
+    if(i==2){
+        wrapper[i].style.transform = `translateX(-${(100/9)*sliderCounter[i]}%)`
+    }else{
+        wrapper[i].style.transform = `translateX(-${10*sliderCounter[i]}%)`
+    }
 }
 //Dandole funcionalidad a los buttons flecha del slider
 arrowNext.forEach((arrow, i )=>{

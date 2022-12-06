@@ -1,35 +1,57 @@
-const sliderMove = document.querySelector(".sliderA__sliderMove");
-const slidera    = document.querySelector(".sliderA");
-let number = 1;
+const sliderMove       = document.querySelector(".sliderA__sliderMove");
+const slidera          = document.querySelector(".sliderA");
+const sliderCards      = document.querySelectorAll(".sliderA__sliderMove-card");
+const buttonNext       = document.querySelector(".sliderA__arrow-right");
+const buttonPrev       = document.querySelector(".sliderA__arrow-left");
+const cardLast         = sliderCards[sliderCards.length - 1];
+let stv;
 
-//función para iniciar el inteval cada vez que el mause sale del sliderA
-slidera.addEventListener("mouseout", ()=>{
-    clearInterval(itv);
-    startInterval();
-})
+//función para transladar el slider hacía la derecha
+const next = ()=>{
+    let cardFirst = document.querySelector(".sliderA__sliderMove-card");
+    sliderMove.style.transform = "translateX(-40%)";
+    sliderMove.style.transition = "transform .5s";
+    setTimeout(()=>{
+        sliderMove.style.transition = "none";
+        sliderMove.insertAdjacentElement("beforeend", cardFirst);
+        sliderMove.style.transform = "translateX(-20%)"
+    }, 500);
+}
 
-//función para detener el interval cada vez que el mause entra em el slider
-slidera.addEventListener("mouseenter", ()=>{
-    clearInterval(itv);
+//función para transladar el slider hacía la izquierda
+const prev = ()=>{
+    let cardLastNew = document.querySelectorAll(".sliderA__sliderMove-card")[sliderCards.length -1];
+    sliderMove.style.transform = "translateX(0%)";
+    sliderMove.style.transition = "transform .5s";
+    setTimeout(()=>{
+        sliderMove.style.transition = "none";
+        sliderMove.insertAdjacentElement("afterbegin", cardLastNew);
+        sliderMove.style.transform = "translateX(-20%)"
+    }, 500);
+}
+
+//fuciones para ejecutar el movimiento del slider
+buttonNext.addEventListener("click", ()=>{
+    next();
+});
+buttonPrev.addEventListener("click", ()=>{
+    prev();
 });
 
-//función para mover el sliderMove del sliderA
-const moveCards = ()=>{
-    sliderMove.style.transform = `translateX(-${20*number}%)`;
-}
+//posicionamos el ultimo elemento del slider al inicio
+sliderMove.insertAdjacentElement("afterbegin", cardLast);
 
-//función para que el active el timer que cada x segundos movera el sliderA
-const startInterval = ()=>{
-    itv = setInterval(()=>{
-        switch(number) {
-            case 0: moveCards(); number=1;break;
-            case 1: moveCards(); number=2;break;
-            case 2: moveCards(); number=3;break;
-            case 3: moveCards(); number=4;break;
-            case 4: moveCards(); number=0;break;
-        }
-    }, 2000);
-}
+//función para que el slider se mueva automaticamente
+function startInterval(){stv = setInterval( ()=>{ next() }, 7000 )}
 
-//inicio el interval para que el sliderA se mueva aumaticamente
+//eventos para dentener el setInterval, el movimiento automatico del slider
+slidera.addEventListener("mouseenter", ()=>{
+    clearInterval(stv);
+});
+slidera.addEventListener("mouseleave", ()=>{
+    clearInterval(stv);
+    startInterval();
+});
+
+//iniciamos el movimiento automatico del slider
 startInterval();

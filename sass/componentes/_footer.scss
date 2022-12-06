@@ -1,0 +1,56 @@
+.footer {
+    background-color: lightblue;
+    width: 100%;
+}
+
+.join {
+    @include flex(space-between, center, row, nowrap);
+    background: linear-gradient(90deg,#2d0649, #5415b3);
+    padding: 0 5em;
+
+    &__contText {
+        @include flex(center, start, column, nowrap);
+        gap: 1em;
+        width: 40%;
+        color: rgb(224, 220, 220);
+        
+        &__text {
+            font-size: .9em;
+            font-weight: 600;
+        }
+        &__enlace {
+            border: 1px solid white;
+            border-radius: 2em;
+            padding: .5em 1.5em;
+            text-transform: uppercase;
+            font-size: .9em;
+            font-weight: bold;
+            color: white;
+        }
+    }
+}
+
+.contFooter {
+    @include flex(center, center, column, nowrap);
+    gap: 1em;
+    background-color: black;
+    padding: 2em 0;
+    color: white;
+
+    &__ul {
+        display: flex;
+        gap: 1em;
+
+        &-item {
+            list-style: none; 
+            font-weight: bold;
+        }
+    }
+    &__rights { font-weight: bold }
+    hr {
+        border: none;
+        height: 1.5em;
+        width: 2px;
+        background-color: white;
+    }
+}
