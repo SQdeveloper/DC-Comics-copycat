@@ -4,3 +4,9 @@
     align-items: $align;
     flex-flow: $direction $wrap;
 }
+
+@mixin resp($width: 1256px) {
+    @media screen and (max-width:$width){
+        @content;
+    }
+}

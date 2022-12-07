@@ -5,15 +5,22 @@
 
 .join {
     @include flex(space-between, center, row, nowrap);
+    @include resp(900px) { flex-direction: column; padding: 2em 0 0 0 }
     background: linear-gradient(90deg,#2d0649, #5415b3);
     padding: 0 5em;
 
+    &__person { @include resp(480px) { width: 100% }}
+
     &__contText {
         @include flex(center, start, column, nowrap);
+        @include resp(900px) { width: 80% }
         gap: 1em;
         width: 40%;
         color: rgb(224, 220, 220);
         
+        &__title {
+            font-size: 1.8em
+        }
         &__text {
             font-size: .9em;
             font-weight: 600;
@@ -26,6 +33,12 @@
             font-size: .9em;
             font-weight: bold;
             color: white;
+            transition: all .5s;
+
+            &:hover {
+                border-color: var(--color-azul);
+                background-color: var(--color-azul);
+            }
         }
     }
 }
@@ -39,11 +52,19 @@
 
     &__ul {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 1em;
         gap: 1em;
 
         &-item {
             list-style: none; 
             font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--color-azul);
+            }
         }
     }
     &__rights { font-weight: bold }

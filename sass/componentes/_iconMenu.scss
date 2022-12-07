@@ -1,0 +1,36 @@
+.iconMenu {
+    position: fixed;
+    @include flex(center, center, column, nowrap);
+    top: 1.3em; 
+    gap: 3px;
+    right: 2em;
+    z-index: 3;
+    cursor: pointer;
+
+    &:hover > &__line  {
+        background-color: var(--color-azul);
+    }
+
+    &__line {
+        display: block;
+        border: none;
+        outline: none;
+        border-radius: 1em;
+        width: 28px;
+        height: 3px;
+        background-color: black;
+        transform-origin: 0 100%;
+        transition: all .4s;
+
+        &-1-active {
+            transform: translate(2px, 15px) rotate(-45deg);
+        }
+        &-2-active {
+            transform: translateX(-25px);
+            opacity: 0;
+        }
+        &-3-active {
+            transform: translate(0, -17px) rotate(45deg);
+        }
+    }
+}

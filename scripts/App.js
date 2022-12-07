@@ -22,18 +22,28 @@ const calcularHeight = (img, i)=>{
     arrowPrev[i].style.top = `${(img.clientHeight/2) - 24}px`
 }
 
-//alinio el button flecha del slider(arrow)
+//alinio los componentes
 setTimeout(()=>{
+    //alinio los button flecha de los slider
     calcularHeight(imgCard[0], 0);
     calcularHeight(imgCard[18], 1);
     calcularHeight(imgCard[20], 2);
+    //alinio el button play del primer video
+    imgPlay.style.top = `${video.clientHeight/2}px`
 }, 100);
+
 
 window.addEventListener("resize", ()=>{
     calcularHeight(imgCard[0], 0);//0 poquer elegimos cualquier img del primer slider
     calcularHeight(imgCard[18], 1);//18 porque elegimos cualquier img del segundo slider
     calcularHeight(imgCard[20], 2);//20 porque elegimos cualquier img del segundo slider
-    console.log("calcular")
+    //acomodamos en el centro la img de play
+    if(window.innerWidth <= 900) {
+        imgPlay.style.top = `${video.clientHeight/2}px`
+    } else {
+        imgPlay.style.top = "50%";
+    }
+    // console.log(window.);
 });
 
 //funcion para mover el wrapper que esta en el slider
@@ -75,6 +85,9 @@ arrowPrev.forEach((arrow, i)=>{
         wrapperMove(i);
     });
 })
+
+// setTimeout(()=>{
+// }, 1000);
 
 function reproduction() {
     if(!playVideo) {
