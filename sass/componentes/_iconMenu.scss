@@ -4,8 +4,12 @@
     top: 1.3em; 
     gap: 3px;
     right: 2em;
-    z-index: 3;
+    display: none;
     cursor: pointer;
+    @include resp(1256px) {
+        display: flex;
+        z-index: 3;
+    }
 
     &:hover > &__line  {
         background-color: var(--color-azul);

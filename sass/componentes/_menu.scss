@@ -1,0 +1,98 @@
+.contMenu {
+    width: 100%;
+    min-height: calc(100vh - 3.8rem);
+    height: calc(100vh - 3.8rem);
+    margin-top: 3.8rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    overflow-y: scroll;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    z-index: 2;
+    transition: clip-path .8s;
+
+    &-active {
+        display: flex;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        
+    }
+
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+
+    &__submenu {
+        display: none;
+        &-item {
+            list-style:none;
+            padding-left: 3em;
+            padding-top: 1.2em;
+            font-weight: bold;
+            font-size: .9em;
+
+            &-enlace {
+                &:hover {
+                    color: var(--color-azul);
+                }
+            }
+        }
+    }
+
+    &__ul {
+        background-color: white;
+        @include flex(center, start, column, nowrap);
+        @include resp(520px) {gap: 1.2em}
+        border-top: 1px solid black;
+        padding: 1em;
+        gap: 1em;   
+
+        &__item {
+            list-style: none;
+
+            &-enlace {
+                font-weight: bold;
+                font-size: .9em;
+                cursor: pointer;
+                user-select: none;
+
+                &:hover {
+                    color: var(--color-azul);
+                }
+                &:hover > &-img {
+                    filter: invert(26%) sepia(97%) saturate(1909%) hue-rotate(197deg) brightness(97%) contrast(101%);
+                }
+                &-img {
+                    transform: translateY(2px);
+                }
+            }
+        }
+    }
+    
+    &__contEnlaces {
+        background-color: white;
+        @include flex(center, center, row, nowrap);
+        gap: 2em;
+        flex: 1;
+        border-top: 1px solid black;
+        padding: 2em;
+        
+        &__enlace {
+            @include flex(center, center, row, nowrap);
+            width: 100%;
+            padding: .5em 1em; 
+            border: 1px solid black; 
+            border-radius: 2em;
+            height: fit-content;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all .5s;
+
+            &:hover {
+                background-color: var(--color-azul);
+                color: white;
+            }
+        }
+    }
+}

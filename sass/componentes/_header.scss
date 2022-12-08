@@ -12,23 +12,71 @@
     }
 
     &__nav {
-        display: flex;
-        gap: 1.5em;        
         font-size: .85em;
         font-weight: bold;
         @include resp() {
             display: none;
         }
+        
+        &__ul {
+            display: flex;
+            gap: 1.5em;   
 
+            &__item {
+                list-style: none;
+            }
+        }
+        &__submenu {
+            @include flex(center, start, column, nowrap);
+            background-color: white;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .3s;
+            // padding: 1em 1em;
+            transform: translate(-35%, .8em);
+            border-radius: .5em;
+            gap: 0;
+
+            &::after {
+                content: "";
+                position: absolute;
+                border-width: 0 .5em .8em;
+                border-style: solid;
+                border-color: transparent transparent white;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -.8em);
+            }
+            &:hover { visibility: visible; opacity: 1; }
+            &-item {
+                list-style: none;
+                width: 100%;
+
+                &:hover { background-color: var(--color-azul)}
+                &-enlace {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 1em 1em;
+                }
+            }
+        }
         &-enlace {
-            @include flex(center, end, row, nowrap);
+            @include flex(center, center, row, nowrap);
+            height: 3.8rem;
 
+            &:hover ~ .header__nav__submenu {
+                visibility: visible;
+                opacity: 1;
+            }
             &:hover {
                 color: var(--color-azul);
             }
             &:hover > img {
                 filter: invert(45%) sepia(79%) saturate(5653%) hue-rotate(195deg) brightness(93%) contrast(104%);
             }
+            &-arrowDown { transform: translateY(1px) }
         }
     }
     &__img {
@@ -59,8 +107,8 @@
     &__contInput {
         @include flex(center, center, row, nowrap);
         gap: 1em;
-        padding: 1em;
         height: 2.5em;
+        padding-left: 1em;
         background-color: #f2f2f2;
         border-radius: 2em;
         clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
@@ -80,7 +128,15 @@
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
         &-search {
-            cursor: pointer;   
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            &-img {
+                @include resp(500px) {
+                    
+                }
+            }
         }
     }
 }

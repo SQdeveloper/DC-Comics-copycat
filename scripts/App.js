@@ -2,7 +2,7 @@
 
 const imgSearch  = document.querySelector(".header__search");
 const contInput  = document.querySelector(".header__contInput");
-const search     = document.querySelector(".header__contInput-search");
+const search     = document.querySelector(".header__contInput-search-img");
 const video      = document.querySelector(".contVideo__video");
 const imgTrailer = document.querySelector(".contVideo__img");
 const imgPlay    = document.querySelector(".contVideo__play");

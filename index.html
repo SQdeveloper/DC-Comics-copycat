@@ -8,27 +8,135 @@
     <link rel="stylesheet" href="./css/App.css">
 </head>
 <body>
+    <!-- icono del menu -->
     <div class="iconMenu">
         <span class="iconMenu__line iconMenu__line-1"></span>
         <span class="iconMenu__line iconMenu__line-2"></span>
         <span class="iconMenu__line iconMenu__line-3"></span>
     </div>
+    
+    <!-- contenedor del menú -->
+    <div class="contMenu">
+        <ul class="contMenu__ul">
+            <li class="contMenu__ul__item">
+                <a href="" class="contMenu__ul__item-enlace">CHARACTERS</a></li>
+            <li class="contMenu__ul__item">
+                <a class="contMenu__ul__item-enlace">COMICS<img class="contMenu__ul__item-enlace-img" src="./assets/svg/caret-down-fill.svg" /></a>
+                <ul class="contMenu__submenu">
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">LATEST COMICS</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">DC UNIVERSE INFINITE</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">ALL COMICS SERIES</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">TOP STORYLINES</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">SHOWCASE COLLECTIONS</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">COMIC SHOP LOCATOR</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">PRINT SUBSCRIPTIONS</a></li>
+                </ul>
+            </li>
+            <li class="contMenu__ul__item">
+                <a class="contMenu__ul__item-enlace">MOVIES & TV<img class="contMenu__ul__item-enlace-img" src="./assets/svg/caret-down-fill.svg" /></a>
+                <ul class="contMenu__submenu">
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">DC MOVIES</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">DC SERIES</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">DC ON HBO MAX</a></li>
+                </ul>
+            </li>
+            <li class="contMenu__ul__item">
+                <a href="" class="contMenu__ul__item-enlace">GAMES</a></li>
+            <li class="contMenu__ul__item">
+                <a href="" class="contMenu__ul__item-enlace">NEWS</a></li>
+            <li class="contMenu__ul__item">
+                <a href="" class="contMenu__ul__item-enlace">VIDEO</a></li>
+            <li class="contMenu__ul__item">
+                <a class="contMenu__ul__item-enlace">SHOP<img class="contMenu__ul__item-enlace-img" src="./assets/svg/caret-down-fill.svg" /></a>
+                <ul class="contMenu__submenu">
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">DC SHOP</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">NEW ARRIVALS</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">MOST POPULAR</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">SHOP BY CHARACTER</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">SHOP T-SHIRTS</a></li>
+                    <li class="contMenu__submenu-item"><a href="#" class="contMenu__submenu-item-enlace">SHOP FUNKO</a></li>
+                </ul>
+            </li>
+            <li class="contMenu__ul__item">
+                <a href="" class="contMenu__ul__item-enlace">COMMUNITY</a></li>
+            <li class="contMenu__ul__item">
+                <a href="" class="contMenu__ul__item-enlace">DC NFTS</a></li>
+            <li class="contMenu__ul__item">
+                <a href="" class="contMenu__ul__item-enlace">DC FANDOME</a></li>
+            <li class="contMenu__ul__item">
+                <a href="" class="contMenu__ul__item-enlace">MY DC ORIGIN STORY</a></li>
+        </ul>
+        
+        <div class="contMenu__contEnlaces">
+            <a href="" class="contMenu__contEnlaces__enlace">sign up</a>
+            <a href="" class="contMenu__contEnlaces__enlace">log in</a>
+        </div>
+    </div>
+
+    <!-- seccion header -->
     <header class="header">
         <img class="header__logo header__img" src="./assets/svg/dc-logo.svg" alt="logo">
         <nav class="header__nav">
-            <a href="" class="header__nav-enlace">CHARACTERS</a>
-            <a href="" class="header__nav-enlace">COMICS<img src="./assets/svg/caret-down-fill.svg" /></a>
-            <a href="" class="header__nav-enlace">MOVIES & TV<img src="./assets/svg/caret-down-fill.svg" /></a>
-            <a href="" class="header__nav-enlace">GAMES</a>
-            <a href="" class="header__nav-enlace">NEWS</a>
-            <a href="" class="header__nav-enlace">VIDEO</a>
-            <a href="" class="header__nav-enlace">SHOP<img src="./assets/svg/caret-down-fill.svg" /></a>
-            <a href="" class="header__nav-enlace">COMMUNITY</a>
-            <a href="" class="header__nav-enlace">MORE<img src="./assets/svg/caret-down-fill.svg" /></a>
+            <ul class="header__nav__ul">
+                <li class="header__nav__ul__item">
+                    <a href="#" class="header__nav-enlace">CHARACTERS</a>
+                </li>
+                <li class="header__nav__ul__item">
+                    <a href="#" class="header__nav-enlace">COMICS<img class="header__nav-enlace-arrowDown" src="./assets/svg/caret-down-fill.svg" /></a>
+                    <ul class="header__nav__ul header__nav__submenu">
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">LATEST COMICS</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">DC UNIVERSE INFINITE</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">ALL COMICS SERIES</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">TOP STORYLINES</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">SHOWCASE COLLECTIONS</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">COMIC SHOP LOCATOR</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">PRINT SUBSCRIPTIONS</a></li>
+                    </ul>
+                </li>
+                <li class="header__nav__ul__item">
+                    <a href="#" class="header__nav-enlace">MOVIES & TV<img src="./assets/svg/caret-down-fill.svg" /></a>
+                    <ul class="header__nav__ul header__nav__submenu">
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">DC MOVIES</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">DC SERIES</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">DC ON HBO MAX</a></li>
+                    </ul>
+                </li>
+                <li class="header__nav__ul__item">
+                    <a href="#" class="header__nav-enlace">GAMES</a>
+                </li>
+                <li class="header__nav__ul__item">
+                    <a href="#" class="header__nav-enlace">NEWS</a>
+                </li>
+                <li class="header__nav__ul__item">
+                    <a href="#" class="header__nav-enlace">VIDEO</a>
+                </li>
+                <li class="header__nav__ul__item">
+                    <a href="#" class="header__nav-enlace">SHOP<img src="./assets/svg/caret-down-fill.svg" /></a>
+                    <ul class="header__nav__ul header__nav__submenu">
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">DC SHOP</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">NEW ARRIVALS</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">MOST POPULAR</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">SHOP BY CHARACTER</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">SHOP T-SHIRTS</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">SHOP FUNKO</a></li>
+                    </ul>
+                </li>
+                <li class="header__nav__ul__item">
+                    <a href="#" class="header__nav-enlace">COMMUNITY</a>
+                </li>
+                <li class="header__nav__ul__item">
+                    <a href="#" class="header__nav-enlace">MORE<img src="./assets/svg/caret-down-fill.svg" /></a>
+                    <ul class="header__nav__ul header__nav__submenu">
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">DC NFTS</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">DC FANDOME</a></li>
+                        <li class="header__nav__submenu-item"><a href="#" class="header__nav__submenu-item-enlace">MY DC ORIGIN STORY</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
         <div class="header__contInput">
-            <img class="header__contInput-search" src="./assets/svg/search.svg" alt="search">
-            <form action="" class="header__conInput-search">
+            <img class="header__contInput-search-img" src="./assets/svg/search.svg" alt="search">
+            <form action="" class="header__contInput-search">
                 <label class="header__contInput__label" for="search">Search:</label>
                 <input class="header__contInput__input" type="text" name="search" id="search">
             </form>
@@ -281,7 +389,6 @@
                 </button>
             </div>
 
-
             <div class="latest">   
                 <h2 class="latest__title">news from around the multiverse</h2>
                 <div class="latest__contSlider">       
@@ -378,5 +485,7 @@
     <script src="./scripts/slidera.js"></script>
     <script src="./scripts/App.js"></script>
     <script src="./scripts/iconMenu.js"></script>
+    <script src="./scripts/inputHeader.js"></script>
+    <script src="./scripts/menu.js"></script>
 </body>
 </html>
