@@ -3,7 +3,7 @@
 
 ## Descripción 📑
 
-En esta landing page encontras información sobre mi, como mi eduación, mis proyectos y como contactarme.
+Esta página es un clon de dc comics en el que aprendí a realizar menús con submenús integrados y también mejore mis conocimentos en css y maquetado.
 ## Tecnologías 🛠
 <!-- Iconos sacados de: https://github.com/hendrasob/badges/blob/master/README.md y https://github.com/alexandresanlim/Badges4-README.md-Profile -->
 <p><img width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"/>
