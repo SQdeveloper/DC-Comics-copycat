@@ -176,6 +176,7 @@
         min-height: 16em;
         margin-bottom: 2em;
         cursor: pointer;
+        position: relative;
 
         &-releases {
             box-shadow: none;
@@ -237,11 +238,36 @@
             &-releases {
                 font-size: 1.3em;
             }
+
+            &-plus {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                color: var(--color-azul);
+                transition: font-size .5s;
+
+                @include flex(center, center, row, nowrap);
+                
+                &:hover {
+                    font-size: 1.7em;
+                }
+                &:hover > &-img {
+                    transform: scale(1.2);
+                }
+
+                &-img {
+                    width: 35px;
+                    height: 35px;
+                    filter: invert(30%) sepia(57%) saturate(5318%) hue-rotate(196deg) brightness(98%) contrast(106%);
+                    transition: transform .5s;
+                }
+            }
         }
     }
     &__button {
         position: absolute;
-        box-shadow: 3px 3px 5px rgba(0,0,0,.2);
+        box-shadow: 0.4px 3px 5px 3px rgba(0,0,0,.2);
         background-color: white;
         border-radius: 50%;
         width: 48px;
