@@ -287,11 +287,11 @@
             height: inherit;
             --linear: linear-gradient(rgba(0,0,0,.2) 100%, transparent);
             
-            &-1 { background: var(--linear), url("./assets/slidera/slidera1.webp"); background-repeat:no-repeat; background-size: cover; background-position: center top }
-            &-2 { background: var(--linear), url("./assets/slidera/slidera2.webp"); background-repeat:no-repeat; background-size: cover; background-position: center top }
-            &-3 { background: var(--linear), url("./assets/slidera/slidera3.webp"); background-repeat:no-repeat; background-size: cover; background-position: center top }
-            &-4 { background: var(--linear), url("./assets/slidera/slidera4.webp"); background-repeat:no-repeat; background-size: cover; background-position: center top }
-            &-5 { background: var(--linear), url("./assets/slidera/slidera5.webp"); background-repeat:no-repeat; background-size: cover; background-position: center top }
+            &-1 { background: var(--linear), url("../assets/slidera/slidera1.webp"); background-repeat:no-repeat; background-size: cover; background-position: center top }
+            &-2 { background: var(--linear), url("../assets/slidera/slidera2.webp"); background-repeat:no-repeat; background-size: cover; background-position: center top }
+            &-3 { background: var(--linear), url("../assets/slidera/slidera3.webp"); background-repeat:no-repeat; background-size: cover; background-position: center top }
+            &-4 { background: var(--linear), url("../assets/slidera/slidera4.webp"); background-repeat:no-repeat; background-size: cover; background-position: center top }
+            &-5 { background: var(--linear), url("../assets/slidera/slidera5.webp"); background-repeat:no-repeat; background-size: cover; background-position: center top }
             
         }
     }

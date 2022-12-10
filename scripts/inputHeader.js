@@ -8,7 +8,7 @@ if(window.innerWidth <= 500) {
     searchImg.src = "./assets/svg/x-lg.svg";
     searchImg.style.filter = "invert(18%) sepia(100%) saturate(6986%) hue-rotate(1deg) brightness(97%) contrast(119%)";
     
-    //
+    //sacamos el logo para que halla espacio
     headerSearch.addEventListener("click", ()=>{
         headerLogo.style.display = "none"
     });
@@ -19,5 +19,3 @@ if(window.innerWidth <= 500) {
     searchImg.src = "./assets/svg/search.svg"
     searchImg.style.filter = "none"
 }
-// window.addEventListener("resize", ()=>{
-// })
